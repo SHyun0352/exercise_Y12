@@ -18,10 +18,9 @@ def main():
             pickUp(name_list)
 
         elif choice == 3:
-            calcCost()
-            print()
-            print(calcCost())
-            print()
+            number = len(name_list)
+            print(f"The total cost for looking after {len(name_list)} children is \n"
+                  f" {calcCost(number):.2f}")
 
         elif choice == 4:
             prtRoll(name_list)
@@ -53,10 +52,10 @@ def pickUp(name_list):
             print()
 
 
-def calcCost():
+def calcCost(number):
     rate = 12.00
     time = int(input("How many hours? "))
-    cost = rate * time
+    cost = number * rate * time
     return cost
 
 

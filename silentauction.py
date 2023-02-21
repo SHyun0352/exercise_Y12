@@ -30,32 +30,27 @@ def yes_no(question_text):
 
 
 def item_sell():
+
     highest_bid = 0
 
     while True:
 
         item = input("What is this auction for? ")
+
+        print()
         confirmation = yes_no(f"Are you sure you want to sell {item}? (Y/N) ")
+
         reservep = corrector("What is the reserve price? ")
 
         if confirmation == "Yes":
-            bid(item, reservep, highest_bid)
-
-            redo = ""
-
+            highest_bid = bid(item, reservep, highest_bid)
             print()
-            redo = yes_no("Do you want to sell another item? (Y/N)" )
+            redo = yes_no("Do you want to sell another item? (Y/N)")
 
             if redo != "Yes":
                 print()
-                exit("Thank you for using our auction!")
-
-        elif confirmation == "X" or "x":
-            print()
-            exit("Thank you for using our program!")
-
-        else:
-            print()
+                print("Thank you for using our Auction!")
+                break
 
 
 def bid(_item, _reservep, _highest_bid):

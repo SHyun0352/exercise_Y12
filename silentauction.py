@@ -43,14 +43,13 @@ def item_sell():
         reservep = corrector("What is the reserve price? ")
 
         if confirmation == "Yes":
-            highest_bid = bid(item, reservep, highest_bid)
+            bid(item, reservep, highest_bid)
             print()
             redo = yes_no("Do you want to sell another item? (Y/N)")
 
             if redo != "Yes":
                 print()
-                print("Thank you for using our Auction!")
-                break
+                exit("Thank you for using our Auction!")
 
 
 def bid(_item, _reservep, _highest_bid):
